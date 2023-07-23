@@ -11,8 +11,17 @@ fi
 
 # Function to detect the OS
 detect_os () {
-    OS=`lsb_release -i | cut -f2-`
-    if [ -z "$OS" ]; then
+    if type lsb_release >/dev/null 2>&1; then
+        OS=$(lsb_release -si)
+    elif [ -f /etc/os-release ]; then
+        . /etc/os-release
+        OS=$NAME
+    elif [ -f /etc/redhat-release ]; then
+        OS=`cat /etc/redhat-release | awk '{print $1}'`
+    elif [ -f /etc/lsb-release ]; then
+        . /etc/lsb-release
+        OS=$DISTRIB_ID
+    else
         echo "Cannot identify the OS."
         exit 1
     fi
@@ -129,9 +138,9 @@ detect_os
 show_mirrors
 read -p "Enter the number of the mirror you want to use: " mirror_idx
 selected_key="${mirror_keys[$((mirror_idx-1))]}"
-if [ "$OS" == "Ubuntu" ]; then
+if [[ "$OS" == *"Ubuntu"* ]]; then
     change_mirror_ubuntu "$selected_key"
-elif [ "$OS" == "CentOS Linux" ]; then
+elif [[ "$OS" == *"CentOS"* ]]; then
     change_mirror_centos "$selected_key"
 else
     echo "Unsupported OS."
