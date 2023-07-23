@@ -11,10 +11,8 @@ fi
 
 # Function to detect the OS
 detect_os () {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        OS=$NAME
-    else
+    OS=`lsb_release -i | cut -f2-`
+    if [ -z "$OS" ]; then
         echo "Cannot identify the OS."
         exit 1
     fi
