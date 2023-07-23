@@ -2,7 +2,8 @@
 
 This script allows you to change the mirror server of your Ubuntu or CentOS system. The list of mirrors in this script is based on Korean mirrors, but you can manually enter any mirror URL or modify the script to include mirrors from other countries. You can refer to [this link](https://launchpad.net/ubuntu/+archivemirrors) for a list of mirrors by country.
 
-**Note:** This script was originally written for switching to Korean mirror servers, but you can modify the script or manually input the mirror URL to suit your country.
+**Note:** This script was originally developed for switching to Korean mirror servers, but you can modify the script or manually input the mirror URL to suit your country.
+
 
 ## Usage
 
@@ -28,7 +29,7 @@ This project is licensed under the terms of the MIT license. See the [LICENSE](L
 
 이 스크립트를 사용하면 Ubuntu 또는 CentOS 시스템의 미러 서버를 변경할 수 있습니다. 이 스크립트에 포함된 미러 목록은 한국 미러를 기반으로 하지만, 사용자는 어떤 미러 URL도 수동으로 입력하거나 스크립트를 수정하여 다른 국가의 미러를 포함시킬 수 있습니다. 국가별 미러 목록은 [이 링크](https://launchpad.net/ubuntu/+archivemirrors)를 참조하십시오.
 
-**참고:** 이 스크립트는 원래 한국 미러 서버로 전환하기 위해 작성되었지만, 사용자의 국가에 맞게 스크립트를 수정하거나 미러 URL을 수동으로 입력할 수 있습니다.
+**참고:** 이 스크립트는 원래 한국 미러 서버로 전환하기 위해 개발되었지만, 사용자의 국가에 맞게 스크립트를 수정하거나 미러 URL을 수동으로 입력할 수 있습니다.
 
 ## 사용법
 
